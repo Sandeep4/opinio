@@ -1,6 +1,8 @@
 __author__ = 'sandeep'
 
 
-PRODUCTION_SERVER = 'http://deliver.opinioapp.com'
+PRODUCTION_HOST = 'deliver.opinioapp.com'
 
-TESTING_SERVER = 'http://test.deliver.opinioapp.com'
+TESTING_HOST = 'test.deliver.opinioapp.com'
+
+ORDERS_API = '/api/v1/orders'
