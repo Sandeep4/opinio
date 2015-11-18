@@ -36,15 +36,12 @@ class OpinioClient(object):
     def get_req_header(self, params, method, path):
         if params:
             sorted_params = collections.OrderedDict(sorted(params.items()))
-            print sorted_params
             qstring = '&'+urllib.urlencode(sorted_params)
         else:
             qstring = ''
         encode_request = '\n'.join([method, self.SERVER_HOST, path, self.ACCESS_KEY, qstring, '&SignatureVersion=1', '&SignatureMethod=HmacSHA1'])
-        print encode_request
         sig = hmac.new(self.SECRET_KEY,encode_request,hashlib.sha1)
         auth_key = "Opinio "+self.ACCESS_KEY+":"+b64encode(sig.digest())
-        print auth_key
         headers = {"Authorization": auth_key}
         return headers
 
