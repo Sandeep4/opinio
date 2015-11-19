@@ -29,7 +29,7 @@ class OpinioClient(object):
         self.ORDERS_API = 'http://'+self.SERVER_HOST + ORDERS_API
 
     def _get_repsonse_dict(self, response):
-        if not response.status_code == 200:
+        if not response.status_code in [200, 201]:
             raise HTTPError(response.content)
         return json.loads(response.content)
 
