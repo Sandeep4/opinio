@@ -5,7 +5,7 @@ API Doc (http://deliver.opinioapp.com/api/docs)
 ### Installation
 
 ```
-pip install git+https://github.com/Sandeep4/opinio.git#egg=opinio
+pip install opinio
 ```
 
 ### Usage
